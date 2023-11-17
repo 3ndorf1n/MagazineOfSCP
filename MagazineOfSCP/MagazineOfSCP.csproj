@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="backimage.jpg" />
+    <None Remove="backmagazine.jpg" />
+    <None Remove="SCP.jpg" />
+    <None Remove="SCP106.png" />
+    <None Remove="Unknow.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Data" Version="23.1.6" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="backimage.jpg" />
+    <Resource Include="backmagazine.jpg" />
+    <Resource Include="SCP.jpg" />
+    <Resource Include="SCP106.png" />
+    <Resource Include="Unknow.jpg" />
+  </ItemGroup>
+
+</Project>

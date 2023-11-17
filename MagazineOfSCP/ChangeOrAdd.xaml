@@ -1,0 +1,84 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MagazineOfSCP"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="MagazineOfSCP.ChangeOrAdd"
+        mc:Ignorable="d"
+        Title="ChangeOrAdd" Height="700" Width="450" FontFamily="couriernew.ttf" MinWidth="450" MinHeight="700">
+    <Window.Background>
+        <ImageBrush ImageSource="/SCP.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid x:Name="mainGrid" Margin="0,10,0,0">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="86*"/>
+                <RowDefinition Height="115*"/>
+                <RowDefinition Height="125*"/>
+                <RowDefinition Height="282*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="count"   materialDesign:HintAssist.Hint="Кол-во" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Grid.Row="1" UndoLimit="3"  />
+            <TextBox x:Name="price" materialDesign:HintAssist.Hint="Price" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"  />
+            <ScrollViewer Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" >
+                <TextBox x:Name="description" materialDesign:HintAssist.Hint="Описание и условия ██████████"  Grid.Row="3" Grid.Column="2" ScrollViewer.CanContentScroll="True"  Grid.ColumnSpan="4" TextWrapping="Wrap" />
+            </ScrollViewer>
+            <Image x:Name="image" Stretch="UniformToFill" Grid.Column="2" Grid.Row="1" Source="/Unknow.jpg" Grid.RowSpan="2" Grid.ColumnSpan="2"  MouseLeftButtonDown="image_MouseLeftButtonDown" />
+            <Grid Grid.Row="0" Grid.Column="3" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18*"/>
+                    <RowDefinition Height="23*"/>
+                    <RowDefinition Height="34*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="name" UndoLimit="3" materialDesign:HintAssist.Hint="SCP" HorizontalAlignment="Right" VerticalAlignment="Center"    Grid.Row="1" />
+                <TextBlock Text="███" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0"   Grid.Row="0" Height="14" Width="32"/>
+                <ComboBox x:Name="class" materialDesign:HintAssist.Hint="Class"  HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="2">
+                    <System:String>Безопасный</System:String>
+                    <System:String>Евклид</System:String>
+                    <System:String>Кетер</System:String>
+                    <System:String>Таумиэль</System:String>
+                </ComboBox>
+            </Grid>
+            <Grid  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" UseLayoutRounding="False" Margin="0,1,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="changeOrAdd_btn" Content="Ок" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="#DDFFFFFF" BorderThickness="0,0,0,0" UseLayoutRounding="False" Click="changeOrAdd_btn_Click"  >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FFA28080" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="cancel_btn" Grid.Column="2" HorizontalContentAlignment="Center"   Content="Отмена"   Foreground="#DDFFFFFF" UseLayoutRounding="False" VerticalContentAlignment="Center" BorderThickness="0,0,0,0" Click="cancel_btn_Click"  >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FFA28080" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>
